@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MXIND</title>
+    <link rel="stylesheet" href="./轮播图.css">
+    <link rel="stylesheet" href="./头部.css">
+    <style>
+        header,main,footer{
+            width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        main{        /* 轮播图和内容 */
+            height: 800px;
+            /* background-color: rgb(247, 199, 191); */
+        }
+        /* 内容 第一部分*/
+        .text{
+          /* background-color: rgb(209, 231, 250); */
+          height: 600px;
+          padding: 10px 20px;
+        }
+        .title h1{
+          display: block;
+        }
+        .list li{
+            float: left; 
+            list-style-type: none;
+            /* 去除圆点 */
+            padding: 0px 10px;
+            padding-bottom: 10px;
+            border-bottom: rgb(172, 171, 171) 1px solid;
+        }
+        .list a{
+            text-decoration: none;
+            /* 去除下划线 */
+            color: black;
+        }
+        .list a:hover{
+            color:rgb(226, 43, 119);
+            border-bottom: solid 1px black;
+        }
+        .list img{
+          
+          border-radius: 10%;
+        }
+        .list img:hover{
+          transform: scale(1.2) ;/* 水平垂直同时放大1.2倍 */
+          transition: 0.3s;/* 放大延时时间 */
+          box-shadow: 1px 15px 15px rgb(63, 61, 61);
+        }
+        .list span{
+            display: block;
+            margin: 0px 10px;
+        }
+        /* 内容第二部分 */
+        .text2{
+          /* 包含 nav1和 nav2 */
+          width: 1400px;
+          height: 300px;
+          /* background-color: rgb(187, 192, 197); */
+        }
+        .nav1{
+          width: 500px;
+          height: 600px;
+          background-color: thistle;
+          float: left;
+        }
+        .nav2{
+          width: 900px;
+          height: 600px;
+          float: right;
+          background-color: rgb(255, 167, 152);
+        }
+        .mi1{
+          border-radius: 10px;
+          overflow: hidden;
+        }
+        .mi1 li{
+          width: 300px;
+          height: 248px;
+          float: left;
+          margin: 0 10px;
+          list-style: none;
+          border-radius: 6%;
+          overflow: hidden;
+          background-color: aliceblue;
+        }
+        .mi1 ul img{
+          width: 300px;
+          border-radius: 20px 20px 0 0;
+          transition: 0.4s;
+        }
+        .mi1 ul img:hover{
+          transform: scale(1.1);
+        }
+        .pp{
+          padding: 10px 50px;
+          border: #f2f2f2 solid;
+          /* border-radius: 0 0 10% 10px; */
+        }
+        .re img{
+          border-radius: 10%;
+        }
+        footer{
+          width: 100%;
+          height: 200px;
+          border: 1px 2px solid #999;
+          margin: 0 auto;
+          background-color: rgb(236, 249, 252);
+          margin-top: 700px;
+        } 
+        footer li{
+          width: 250px;
+          height: 100px;
+          /* background-color: rgb(136, 192, 241); */
+          /* margin-top: 500px; */
+          float: left;
+          margin: 10px 30px;
+          list-style: none;
+        }
+      footer p{
+        font-size: 13px;
+        line-height: 20px;
+        color: rgb(97, 97, 97);
+      }
+    </style>
+</head>
+<body>
+<header>
+        <div class="logo">
+          <img src="./img-x/a1.png" alt="">
+        </div>
+        <div class="dh">
+            <a href="./国宝.html">国宝</a>
+            <a href="./朱鹮.html">朱鹮</a>
+            <a href="./大熊猫.html ">大熊猫</a>
+            <a href="./美食.html">美食</a>
+            <a href="./旅游景点.html">旅游景点</a>
+            <a href=" ">人文历史</a>
+            <a href="./文化.html">家乡文化</a>
+        </div>
+</header>
+<main>
+    <!-- 轮播开始 -->
+<div class="box">
+        <div id="max">
+            <div class="re">
+                <ul>
+                    <li><img src="./img-x/fj7.jpg" alt=""></li>
+                    <li><img src="./img-x/zh2.jpg" alt=""></li>
+                    <li><img src="./img-x/fj3.jpg" alt=""></li>
+                    <li><img src="./img-x/fj6.jpg" alt=""></li>
+                    <li><img src="./img-x/zh1.jpg" alt=""></li>
+                </ul>
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+        </div>
+        <div class="h1">
+            <ul class="aa">
+                <li><a href=""><i>旅游景点</i></a> </li>
+                <li><a href=""><i>自然保护区</i></a></li>
+                <li><a href=""><i>文化历史</i></a> </li>
+                <li><a href=""><i>保护动物</i></a> </li>
+                <li><a href=""><i>地方小吃</i></a> </li>
+                <li><a href=""><i>旅游景点</i></a> </li>
+                <li><a href=""><i>文化历史</i></a> </li>
+            </ul>
+        </div>
+    </div>
+    
+        <script type="text/javascript">
+            window.onload = function(){
+      var box=this.document.getElementsByClassName("re")[0];
+      var lik=box.getElementsByTagName("li");
+      function fun(i,j){//转换图片函数，就是把透明度改了一下
+        lik[i].style.opacity=1;
+        lik[j].style.opacity=0;
+        lik[i+5].style.backgroundColor="#ffffff";//改一下小图标
+        lik[j+5].style.backgroundColor="#00000000"
+      }
+      fun(0,1);//初始化下
+      var i =0;
+      function auto(){//轮播循环函数
+        if(++i>=5){
+          i=0;
+          fun(0,4);
+        }
+        else fun(i,i-1);
+      }
+      timer=this.setInterval(auto,2000);
+      box.onmouseover = function () { //鼠标划上去，停止轮播
+        console.log('good');
+        clearInterval(timer);
+      }
+      box.onmouseout = function () { //鼠标划出，继续轮播
+        timer = setInterval(auto, 2000); //调用定时器
+      }
+      var j =0;
+      for(;j<5;j++){//点击小图标也可以转换图片
+        lik[j+5].ind=j;
+        lik[j+5].onclick=function(){
+          fun(this.ind,i)
+          i=this.ind;
+        }
+      }
+    
+    }
+        </script>
+    <!-- 轮播结束 -->
+<div class="text">
+          <div class="title">
+            <!-- 国宝 -->
+            <h1 style="color: rgb(77, 206, 133);">国宝</h1>
+          </div>
+          <ul class="list">
+            <li class="li1"> <span class="jdpic">
+                    <a href="./习近平考察.html"><img src="./img-x/zh1.jpg" width="224" height="148"></a></span>
+                    <span class="jdtext">
+                    <a href="./习近平考察.html">朱鹮</a></span></li>
+            <li class="li2"> <span class="jdpic">
+                    <a href="###"><img src="./img-x/dxm1.jpg" width="224" height="148"> </a></span> 
+                    <span class="jdtext">
+                      <a href="###">大熊猫</a></span></li>
+            <li class="li3"> <span class="jdpic">
+                    <a href="###"><img src="./img-x/jsh2.jpg" width="224" height="148"></a></span>
+                    <span class="jdtext">
+                      <a href="###">金丝猴</a></span></li>
+            <li> <span class="jdpic"><a href="###">
+                    <img src="./img-x/zh2.jpg" width="224" height="148"></a></span>
+                    <span class="jdtext">
+                      <a href="###">朱鹮</a></span></li>
+            <li class="li4"> <span class="jdpic"><a href="###">
+                    <img src="./img-x/ln2.jpg" width="224" height="148"></a></span>
+                    <span class="jdtext">
+                      <a href="###">羚牛</a></span></li>
+          </ul>
+        <!-- </div> -->
+        
+      <!-- </div> -->
+      <div class="title">
+        <h1 style="color: rgb(187, 169, 4);">历史文化</h1>
+      </div>
+      <ul class="list">
+        <li class="li1"> <span class="jdpic">
+                <a href="./习近平考察.html"><img src="./img-x/cl2.jpg" width="224" height="148"></a></span>
+                <span class="jdtext">
+                <a href="./习近平考察.html">蔡伦墓</a></span></li>
+        <li class="li2"> <span class="jdpic">
+                <a href="###"><img src="./img-x/cl5.jpg" width="224" height="148"> </a></span> 
+                <span class="jdtext">
+                  <a href="###">造纸术</a></span></li>
+        <li class="li3"> <span class="jdpic">
+                <a href="###"><img src="./img-x/ms1.jpg" width="224" height="148"></a></span>
+                <span class="jdtext">
+                  <a href="###">汉中热米皮</a></span></li>
+        <li> <span class="jdpic"><a href="###">
+                <img src="./img-x/cl3.jpg" width="224" height="148"></a></span>
+                <span class="jdtext">
+                  <a href="###">武侯墓</a></span></li>
+        <li class="li4"> <span class="jdpic"><a href="###">
+                <img src="./img-x/fj4.jpg" width="224" height="148"></a></span>
+                <span class="jdtext">
+                  <a href="###">油菜花</a></span></li>
+      </ul>  
+</div><!-- 国宝/文化完 -->
+<div class="text2">
+    <div class="mi1" style="width: 1400px; height: 55+--0px; margin: 0 auto;">
+    <h2>旅游必备信息</h2>
+    <ul>
+      <li>
+        <img src="./img-x/p1.webp" alt="">
+        <div class="pp">
+          <p>关于陕西</p>
+        </div>
+      </li>
+      <li>
+        <img src="./img-x/p2.webp" alt="">
+        <div class="pp">
+          <p>安全出行建议</p>
+        </div>
+      </li>
+      <li>
+        <img src="./img-x/p3.webp" alt="">
+        <div class="pp">
+          <p>有用联系方式</p>
+        </div>
+      </li>
+      <li>
+        <img src="./img-x/p4.webp" alt="">
+        <div class="pp">
+          <p>交通运输</p>
+        </div>
+      </li>
+    </ul>
+
+    </div>
+</div>
+</main>
+<footer>
+    <ul>
+      <li>
+        <img src="./img-x/zh1.jpg" alt="" width="300px" style="margin-left: -50px;">
+      </li>
+      <li>
+        <p>    联系我们  </p>
+        <p> 联系方式     </p>
+        <p>   交通运输   </p>
+        <p>  最佳方式    </p>
+      </li>
+      <li>
+        <p> 联系方式     </p>
+        <p>   交通运输   </p>
+        <p>  最佳方式    </p>
+        <p>      </p>
+        <p>      </p>
+
+      </li>
+      <li>
+        <p>      </p>
+        <p> 联系方式     </p>
+        <p>   交通运输   </p>
+        <p>      </p>
+        <p> 联系方式     </p>
+        <p>   交通运输   </p>
+
+      </li>
+    </ul>
+</footer>
+</body>
+</html>
